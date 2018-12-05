@@ -6,6 +6,8 @@ import { ArtistsComponent } from './artists/artists.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import { HttpClientModule }    from '@angular/common/http';
+
 const appRoutes: Routes = [
   {
     path: 'auth-complete',
@@ -21,10 +23,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     ),
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

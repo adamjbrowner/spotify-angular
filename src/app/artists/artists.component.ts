@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistsService } from '../artists.service';
+import { SpotifyService } from '../spotify.service';
+
 
 import { Artist } from '../artist';
 
@@ -12,10 +13,10 @@ export class ArtistsComponent implements OnInit {
 
   artists: Artist[];
 
-  constructor(private artistsService: ArtistsService) { }
+  constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
-    this.artists = this.artistsService.getArtists();
+    this.artists = this.spotifyService.getUserTopArtists();
   }
 
 }
